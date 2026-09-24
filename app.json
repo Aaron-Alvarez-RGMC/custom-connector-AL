@@ -4,7 +4,7 @@
     "publisher": "Aaron Alvarez",
     "version": "1.0.0.0",
     "brief": "",
-    "description": "Read-only custom BC API endpoints for data not covered by any existing custom API - built as its own app (per Erwin/Glenn's guidance) instead of adding to the shared RGMC Base Extension, to avoid its versioning conflicts.",
+    "description": "Read-only custom BC API endpoints for data not covered by any existing custom API - built as its own app for rapid development instead of adding to the shared RGMC Base Extension, to avoid its versioning conflicts.",
     "privacyStatement": "",
     "EULA": "",
     "help": "",
@@ -21,18 +21,18 @@
             "id": "5ecfc871-5d82-43f1-9c54-59685e82318d",
             "name": "LS Central",
             "publisher": "LS Retail",
-            "version": "28.2.0.1847"
+            "version": "28.2.6.4060"
         },
         {
             "id": "495bc7e2-aafe-495d-89ea-6bc4dd6c02ec",
             "name": "RGMC Base Extension",
             "publisher": "RGMC Publisher",
-            "version": "1.2.0.3"
+            "version": "1.2.0.8"
         }
     ],
     "screenshots": [],
     "platform": "28.0.0.0",
-    "application": "28.4.53241.54676",
+    "application": "28.4.53241.53312",
     "idRanges": [
         {
             "from": 51000,
