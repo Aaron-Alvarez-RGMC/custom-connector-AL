@@ -24,3 +24,6 @@ $RECYCLE.BIN/
 *.log
 *.tmp
 *.bak
+
+# ─── Ad-hoc dev/test scripts ──────────────────────────────────────────────────
+test-item-attributes.ps1

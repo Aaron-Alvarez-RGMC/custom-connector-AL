@@ -1,51 +1,51 @@
 {
-  "id": "f26e37c0-6ec1-40c0-be12-1894c19cfae5",
-  "name": "RGMC BC Custom Connector",
-  "publisher": "Aaron Alvarez",
-  "version": "1.0.0.0",
-  "brief": "",
-  "description": "Read-only custom BC API endpoints for data not covered by any existing custom API - built as its own app (per Erwin/Glenn's guidance) instead of adding to the shared RGMC Base Extension, to avoid its versioning conflicts.",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
-  "url": "",
-  "logo": "",
-  "dependencies": [
-    {
-      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-      "name": "Base Application",
-      "publisher": "Microsoft",
-      "version": "28.4.53241.54676"
+    "id": "f26e37c0-6ec1-40c0-be12-1894c19cfae5",
+    "name": "RGMC BC Custom Connector",
+    "publisher": "Aaron Alvarez",
+    "version": "1.0.0.0",
+    "brief": "",
+    "description": "Read-only custom BC API endpoints for data not covered by any existing custom API - built as its own app (per Erwin/Glenn's guidance) instead of adding to the shared RGMC Base Extension, to avoid its versioning conflicts.",
+    "privacyStatement": "",
+    "EULA": "",
+    "help": "",
+    "url": "",
+    "logo": "",
+    "dependencies": [
+        {
+            "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+            "name": "Base Application",
+            "publisher": "Microsoft",
+            "version": "28.4.53241.54676"
+        },
+        {
+            "id": "5ecfc871-5d82-43f1-9c54-59685e82318d",
+            "name": "LS Central",
+            "publisher": "LS Retail",
+            "version": "28.2.0.1847"
+        },
+        {
+            "id": "495bc7e2-aafe-495d-89ea-6bc4dd6c02ec",
+            "name": "RGMC Base Extension",
+            "publisher": "RGMC Publisher",
+            "version": "1.2.0.3"
+        }
+    ],
+    "screenshots": [],
+    "platform": "28.0.0.0",
+    "application": "28.4.53241.54676",
+    "idRanges": [
+        {
+            "from": 51000,
+            "to": 51049
+        }
+    ],
+    "resourceExposurePolicy": {
+        "allowDebugging": true,
+        "allowDownloadingSource": true,
+        "includeSourceInSymbolFile": true
     },
-    {
-      "id": "5ecfc871-5d82-43f1-9c54-59685e82318d",
-      "name": "LS Central",
-      "publisher": "LS Retail",
-      "version": "28.2.6.4060"
-    },
-    {
-      "id": "495bc7e2-aafe-495d-89ea-6bc4dd6c02ec",
-      "name": "RGMC Base Extension",
-      "publisher": "RGMC Publisher",
-      "version": "1.2.0.8"
-    }
-  ],
-  "screenshots": [],
-  "platform": "28.0.0.0",
-  "application": "28.4.53241.54676",
-  "idRanges": [
-    {
-      "from": 51000,
-      "to": 51049
-    }
-  ],
-  "resourceExposurePolicy": {
-    "allowDebugging": true,
-    "allowDownloadingSource": true,
-    "includeSourceInSymbolFile": true
-  },
-  "runtime": "18.0",
-  "features": [
-    "NoImplicitWith"
-  ]
+    "runtime": "17.1",
+    "features": [
+        "NoImplicitWith"
+    ]
 }

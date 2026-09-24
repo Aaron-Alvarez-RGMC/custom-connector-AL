@@ -3,8 +3,10 @@
 // implementation this data is meant to line up with):
 //   - Line Up Season: custom field added by RGMC Base Extension (TableExt "RGMC Retail Item",
 //     field 50100) - this app depends on RGMC Base Extension to reference it.
-//   - Attrib. 1-5 Code: custom fields added by LS Central - this app depends on LS Central to
-//     reference them. Deliberately the non-"(Obsolete)" set, per Karen's confirmation.
+//   - LSC Attrib. 1-5 Code: custom fields added by LS Central (TableExt "LSC Item", fields
+//     10001413-10001417) - this app depends on LS Central to reference them. Deliberately the
+//     non-Obsolete set (LSC Attrib 1-5 Code, no period, IDs 10001406-10001410, are
+//     ObsoleteState=Pending in favor of these) - per Karen's confirmation.
 //   - Vendor Item No. / No. 2: standard Base Application fields, already on Item, just never
 //     exposed through any custom API page before now.
 //
@@ -62,27 +64,27 @@ page 51000 "RGMC Item Attributes API"
             }
 
             // --- Attributes ---
-            field(attrib1Code; Rec."Attrib. 1 Code")
+            field(attrib1Code; Rec."LSC Attrib. 1 Code")
             {
                 Caption = 'attrib1Code';
                 Editable = false;
             }
-            field(attrib2Code; Rec."Attrib. 2 Code")
+            field(attrib2Code; Rec."LSC Attrib. 2 Code")
             {
                 Caption = 'attrib2Code';
                 Editable = false;
             }
-            field(attrib3Code; Rec."Attrib. 3 Code")
+            field(attrib3Code; Rec."LSC Attrib. 3 Code")
             {
                 Caption = 'attrib3Code';
                 Editable = false;
             }
-            field(attrib4Code; Rec."Attrib. 4 Code")
+            field(attrib4Code; Rec."LSC Attrib. 4 Code")
             {
                 Caption = 'attrib4Code';
                 Editable = false;
             }
-            field(attrib5Code; Rec."Attrib. 5 Code")
+            field(attrib5Code; Rec."LSC Attrib. 5 Code")
             {
                 Caption = 'attrib5Code';
                 Editable = false;
