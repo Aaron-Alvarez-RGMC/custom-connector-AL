@@ -28,3 +28,4 @@ $RECYCLE.BIN/
 # ─── Ad-hoc dev/test scripts ──────────────────────────────────────────────────
 test-item-attributes.ps1
 test-rgmc-bc-api-item-attributes.ps1
+test-return-receipt-line-extended.ps1

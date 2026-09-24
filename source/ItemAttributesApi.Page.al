@@ -9,10 +9,11 @@
 //     ObsoleteState=Pending in favor of these) - per Karen's confirmation.
 //   - Vendor Item No. / No. 2: standard Base Application fields, already on Item, just never
 //     exposed through any custom API page before now.
-//
-// Not included here: a Product Group Code equivalent. The closest confirmed field
-// ("LSC Retail Product Code") was only found on Item Ledger Entry (table 32), not on Item
-// itself - still needs resolving before it can be added to this or another page.
+//   - LSC Retail Product Code (field 10000703, LS Central "LSC Item" TableExt) - confirmed via
+//     LS Central's own downloaded AL source (not Page Inspector) to be the real NAV
+//     product_group_code equivalent: its own OnValidate joins to the Retail Product Group table
+//     the exact same way NAV's Item.Product_Group_Code did. Also present on Item Ledger Entry,
+//     but this is the item-master copy, matching where NAV kept it.
 //
 // Distinct APIPublisher/APIGroup/EntitySetName from the existing "rgmc"/"rgmccustom" endpoints
 // (items, itemFamily, etc.) - a separate app, so a separate identity, per Erwin's guidance to
@@ -99,6 +100,13 @@ page 51000 "RGMC Item Attributes API"
             field(no2; Rec."No. 2")
             {
                 Caption = 'no2';
+                Editable = false;
+            }
+
+            // --- Product grouping ---
+            field(lscRetailProductCode; Rec."LSC Retail Product Code")
+            {
+                Caption = 'lscRetailProductCode';
                 Editable = false;
             }
 

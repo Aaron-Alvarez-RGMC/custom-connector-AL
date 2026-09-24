@@ -2,7 +2,7 @@
     "id": "f26e37c0-6ec1-40c0-be12-1894c19cfae5",
     "name": "RGMC BC Custom Connector",
     "publisher": "Aaron Alvarez",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "brief": "",
     "description": "Read-only custom BC API endpoints for data not covered by any existing custom API - built as its own app for rapid development instead of adding to the shared RGMC Base Extension, to avoid its versioning conflicts.",
     "privacyStatement": "",

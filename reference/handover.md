@@ -30,7 +30,7 @@ with him directly: separate app, separate name, separate ID — not building on 
 | Object ID range | `51000-51049` — **confirmed clear by Erwin** against his own two apps (`50100`-ish for RGMC Base Extension, `50300-50499` for RGMC API Extension) and the full Extension Management list you pulled |
 | API namespace | `aaronalvarez` / `customConnector` / `v1.0` — deliberately **not** reusing Erwin's `rgmc`/`rgmccustom`, to avoid ever touching his versioning again |
 | First endpoint | `itemAttributes` (page `51000`) — read-only, exposes `lineUpSeason`, `attrib1Code`-`attrib5Code`, `vendorItemNo`, `no2` off the `Item` table |
-| Not included yet | A product-group-code equivalent — the only confirmed field for that (`LSC Retail Product Code`) was found on **Item Ledger Entry**, not Item itself. Needs separate resolution before it can be added anywhere. |
+| Product-group-code equivalent | **Resolved (2026-09-24).** `LSC Retail Product Code` (field `10000703`) confirmed to exist on **Item itself** too, via LS Central's own downloaded AL source — its `OnValidate` joins to Retail Product Group the same way NAV's `Product_Group_Code` did. Added to `ItemAttributesApi.Page.al` as `lscRetailProductCode`. |
 
 ## 3. Current file state (`custom-connector-AL/`)
 
