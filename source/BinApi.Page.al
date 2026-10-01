@@ -1,5 +1,5 @@
 // Read-only API over Bin (7354) - bin master per location (e.g. WHC001PCWH: DISPATCH, DAMAGE, MEZ* staging bins).
-// Karen's request: bins are needed to classify transfers as New/Pullout. Join to warehouseEntries on (locationCode, code).
+// bins are needed to classify transfers as New/Pullout. Join to warehouseEntries on (locationCode, code).
 
 using Microsoft.Warehouse.Structure;
 
