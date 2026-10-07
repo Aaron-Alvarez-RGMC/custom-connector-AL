@@ -1,0 +1,85 @@
+// PENDING (not compiled: the .pending extension keeps it out of the build).
+// Read-only API exposing the hand-entered Lookup Code on Ship-to Address. The field is defined by the shared
+// "RGMC API Extension" (publisher RGMC ERAR, app id f2f309be-197f-480d-985e-2c5035db5a8d) in tableextension 50458,
+// field "Lookup Code" (Text[100]). It is the BC-side copy of the legacy branch lookup code and is filled on only a few
+// ship-tos (16 of 2,738 on 2026-10-07).
+//
+// To enable:
+//   1. Put the RGMC API Extension .app (same version as installed in the target environment) in .alpackages.
+//   2. Add it to app.json "dependencies":
+//        { "id": "f2f309be-197f-480d-985e-2c5035db5a8d", "name": "RGMC API Extension",
+//          "publisher": "RGMC ERAR", "version": "<installed version>" }
+//   3. Rename this file to ShipToLookupCodeApi.Page.al.
+// Note: once added, the connector cannot be installed in an environment that lacks that exact extension version.
+// Natural key: customerNo + code (same as page 51014).
+
+using Microsoft.Sales.Customer;
+
+page 51018 "RGMC Ship-to Lookup Code API"
+{
+    PageType = API;
+    APIPublisher = 'aaronalvarez';
+    APIGroup = 'customConnector';
+    APIVersion = 'v1.0';
+    EntityName = 'shipToLookupCode';
+    EntitySetName = 'shipToLookupCodes';
+    Caption = 'RGMC Ship-to Lookup Code API';
+
+    SourceTable = "Ship-to Address";
+    ODataKeyFields = SystemId;
+
+    DelayedInsert = true;
+    InsertAllowed = false;
+    ModifyAllowed = false;
+    DeleteAllowed = false;
+
+    layout
+    {
+        area(Content)
+        {
+            field(id; Rec.SystemId)
+            {
+                Caption = 'id';
+                Editable = false;
+            }
+            field(customerNo; Rec."Customer No.")
+            {
+                Caption = 'customerNo';
+                Editable = false;
+            }
+            field(code; Rec.Code)
+            {
+                Caption = 'code';
+                Editable = false;
+            }
+            field(name; Rec.Name)
+            {
+                Caption = 'name';
+                Editable = false;
+            }
+            field(lookupCode; Rec."Lookup Code")
+            {
+                Caption = 'lookupCode';
+                Editable = false;
+            }
+            field(companyName; CurrentCompanyName)
+            {
+                Caption = 'companyName';
+                Editable = false;
+            }
+            field(lastModifiedDateTime; Rec.SystemModifiedAt)
+            {
+                Caption = 'lastModifiedDateTime';
+                Editable = false;
+            }
+        }
+    }
+
+    trigger OnAfterGetRecord()
+    begin
+        CurrentCompanyName := CompanyName();
+    end;
+
+    var
+        CurrentCompanyName: Text[30];
+}
