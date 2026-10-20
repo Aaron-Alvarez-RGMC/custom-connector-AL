@@ -2,12 +2,14 @@
 // is not wired into RGMC_ERAR's RGMCTransactionSalesEntryAPIv2.Page.al (Pag50323) today.
 //   - Total Rounded Amt. is the VAT-inclusive line amount NAV's sales models use for total_amount.
 //     Net Amount (already exposed elsewhere) is VAT-exclusive and is NOT a substitute.
+//   - Price Change (field 151), Item Category Code (field 20), Trans. Date (field 600) - used by NAV's
+//     CMSR quantity models (price_change filter, item_category_code filter, trans_date column).
 // storeNo/posTerminalNo/transactionNo/lineNo are the key of LSC Trans. Sales Entry, included so this can
 // be joined back to the existing transactionSalesEntries sync once it lands in its own BigQuery table -
 // Airbyte has no way to merge two different API sources into one table on its own. Same shape as
 // TransactionHeaderExtendedApi.Page.al.
 //
-// No new app.json dependency: LS Central is already a dependency and field 270 is on its own base table.
+// No new app.json dependency: LS Central is already a dependency and all these fields are on its own base table.
 
 page 51023 "RGMC Trans Sales Entry Ext"
 {
@@ -58,10 +60,25 @@ page 51023 "RGMC Trans Sales Entry Ext"
                 Editable = false;
             }
 
-            // --- The missing field ---
+            // --- The missing fields ---
             field(totalRoundedAmt; Rec."Total Rounded Amt.")
             {
                 Caption = 'totalRoundedAmt';
+                Editable = false;
+            }
+            field(priceChange; Rec."Price Change")
+            {
+                Caption = 'priceChange';
+                Editable = false;
+            }
+            field(itemCategoryCode; Rec."Item Category Code")
+            {
+                Caption = 'itemCategoryCode';
+                Editable = false;
+            }
+            field(transDate; Rec."Trans. Date")
+            {
+                Caption = 'transDate';
                 Editable = false;
             }
 
